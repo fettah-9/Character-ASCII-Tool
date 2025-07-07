@@ -1,4 +1,4 @@
-# ZAIN ASCII Converter
+# ASCII Converter
 
 A simple C++ console tool that converts characters to their ASCII codes and vice versa. Interactive and beginner-friendly.
 
