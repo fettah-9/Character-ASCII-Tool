@@ -1,56 +1,55 @@
 #include <iostream>
 using namespace std;
-int num, choise;
-char letter;
-char YN;
-int Y = 1, y = 1, N = 0, n = 0;
 
 
 
-int ACSII() {
+
+int showASCII() {
+	char letter;
 	cout << "=================================\n";
-	cout << "please enter your character: \n";
+	cout << "Please enter your character: ";
 	cin >> letter;
-	cout << "the ACSII code for your character is: " << int(letter) << endl;
-	//fuck();
+	cout << "The ASCII code for '" << letter << "' is: " << int(letter) << endl;
 	return 0;
 }
 
-int Number() {
+int showCharacter() {
+	int num;
 	cout << "=================================\n";
-	cout << "please enter your ACSII number: \n";
+	cout << "Please enter an ASCII number: ";
 	cin >> num;
-	cout << "the character of your ACSII code is : " << char(num) << "\n";
-	//fuck();
+	cout << "The character for ASCII code " << num << " is: '" << char(num) << "'\n";
 	return 0;
 
 }
 
 int home() {
-	cout << "what process do you want?" << endl;
-	cout << "[1] find the ACSII of character." << endl;
-	cout << "[2] find the character of ACSII.\n";
-	cout << "=================================\n";
-	cin >> choise;
+	int choice;
+	char yn;
 
-	if (choise == 1)
-	{
-		ACSII();
-	}
-	
-	else {
-		Number();
-	}
-		cout << "Do you want to continue? [Y/N]\n";
-		cin >> YN;
+	do {
+		cout << "\nWhat process do you want?" << endl;
+		cout << "[1] Find the ASCII of a character." << endl;
+		cout << "[2] Find the character of ASCII." << endl;
+		cout << "=================================\n";
+		cin >> choice;
 
-		if (YN == 1) {
-			home();
+		if (choice == 1) {
+			showASCII();
 		}
-		else
-		{
-			cout << "thank you for using ZAIN!";
+		else if (choice == 2) {
+			showCharacter();
 		}
+		else {
+			cout << "Invalid choice.\n";
+		}
+
+		cout << "Do you want to continue? [Y/N]: ";
+		cin >> yn;
+
+	} while (yn == 'Y' || yn == 'y');
+
+	cout << "Thank you for using ZAIN!" << endl;
 		return 0;
 }
 
